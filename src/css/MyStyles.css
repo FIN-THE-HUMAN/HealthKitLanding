@@ -1,0 +1,55 @@
+.background{
+    height: auto; /* Высота блока */
+    width: auto; /* Ширина блока */
+    overflow: auto; /* Добавляем полосы прокрутки */
+    background: url("../../resources/site_fon.png");
+}
+
+.left{
+    width:120px;
+    text-align:left;
+    margin-bottom: 20px;
+}
+
+.background-new{
+    background-image: url("../../resources/site_fon.png");
+    background-size: 100%;
+    overflow-y: auto;
+    ::-webkit-scrollbar;
+    -webkit-border-radius: 3px;
+    ::-webkit-scrollbar-thumb:vertical;
+}
+
+.gradient {
+    min-height: 100px;
+    height: 20%;
+    background:  linear-gradient(to bottom right, #00796B, #009688, #ffffff 120%);
+}
+.her{
+    background-color: #212f3c;
+    border: 7px solid red;
+    padding: 10px;
+    margin: 15px;
+    color: #2a7aaf;
+    border-radius: 100px;
+    opacity: 0.5;
+    box-shadow: 13px 13px 0px #a94300;
+    width: 100px;
+    transition: 0.5s transform ;
+}
+.position{
+    background-image: url("../../resources/site_fon.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.her:hover{
+    opacity: 1;
+    transform: rotate(10deg);
+}
+
+.gif {
+
+}
+

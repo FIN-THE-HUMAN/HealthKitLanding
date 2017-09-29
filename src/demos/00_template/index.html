@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My site</title>
+    <link rel = "stylesheet" type = "text/css" href = "../../css/main.css">
+    <link rel = "stylesheet" type="text/css" href = "../../css/MyStyles.css">
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+</head>
+<body class = "background-new">
+
+    <div id="position" ></div>
+
+    <script type="text/babel">
+        var Node = React.createClass({
+            Text,
+            getInitialState:function () {
+                this.Text ="Sample Text";
+                return {Text}
+            },
+
+            render:function () {
+                return<div className="left">
+                    <textarea>{this.Text}</textarea>
+                    <button className="button-primary">Edit</button>
+                    <button className="button-success">Remove</button>
+                    </div>
+            }
+        });
+        var S = React.createClass({
+            Text:0,
+            getInitialState:function () {
+                return{Text:0}
+            },
+            update:function () {
+                this.setState({Text:this.Text++});
+            },
+            show:function () {
+              alert(this.Text);
+            },
+            render:function () {
+                window.onscroll = this.update;
+                return<button onClick ={this.show} className="button-warning-light">{this.Text}</button>
+            }
+        });
+
+        var Place = React.createClass({
+            Nodes:[],
+            getInitialState: function () {
+                var n = "start";
+                return {
+                    Nodes:[n]
+                }
+            },
+
+            update: function () {
+                var arr = this.state.Nodes;
+                var t = arr.length;
+                arr.push(t);
+                this.setState({Nodes: arr});
+            },
+
+            each: function (text) {
+                return (<Node Text={text} /> );
+            },
+
+            delete:function () {
+                var arr = this.state.Nodes;
+                arr.pop();
+                this.setState({Nodes: arr});
+            },
+
+            render: function () {
+                return (<div>
+                            <button className="button-secondary" onClick={this.update}>Add</button>
+                            <button className="button-danger" onClick={this.delete}>Delete</button>
+                            <S />
+                        <div >
+                            {
+                                this.state.Nodes.map(this.each)
+                            }
+                        </div>
+                    </div>
+                );
+            }
+        });
+        var Gif = React.createClass({
+            Text,
+            getInitialState:function () {
+                this.Text =<img src="../../../resources/AnimationNEW.gif" />;
+                return {Text}
+            },
+            render:function () {
+                return <div><img src="../../../resources/AnimationNEW.gif" /></div>
+            }
+        });
+
+
+  //      ReactDOM.render(<Gif /> ,document.getElementById('position'))
+     </script>
+    <div class="her"> qwe</div>
+    <div class="her"> her</div>
+    <div class="her"> asd</div>
+    <div class="her"> zxc</div>
+    <div class="her"> vpn</div>
+    <script type="text/javascript" src="../../js/Test.js"></script>
+    <input id="val1" type="number"/><br>
+    <input id="val2" type="number"/>
+    <button>Equal</button>
+    <div id="res">Result</div>
+
+ <img src="../../../resources/AnimationNEW.gif"  id="gif"/>
+<script src="../../js/scrollVideo.js"></script>
+</body>
+</html>
